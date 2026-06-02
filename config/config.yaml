@@ -1,0 +1,54 @@
+project:
+  name: Climate Guard-AI
+  version: 1.0
+
+data:
+  train_path: datasets/train.csv
+  test_path: datasets/test.csv
+  target_column: risk_level
+
+preprocessing:
+  drop_duplicates: true
+  drop_missing: true
+
+  missing_strategy:
+    numeric: mean
+    categorical: mode
+
+  scaling:
+    method: standard  # options: standard / minmax
+
+features:
+  create_feature_engineering: true
+  derived_features:
+    - temp_range
+    - rainfall_intensity
+    - humidity_index
+
+model:
+  type: RandomForestClassifier
+
+  random_forest:
+    n_estimators: 200
+    max_depth: 12
+    random_state: 42
+
+training:
+  test_size: 0.2
+  random_state: 42
+  cross_validation: 5
+
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+
+prediction:
+  output_path: outputs/predictions.csv
+
+risk_levels:
+  low: 0
+  medium: 1
+  high: 2

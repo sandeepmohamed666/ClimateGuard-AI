@@ -22,10 +22,15 @@ Support climate-related decision making
 🧱 Project Structure
 
 ai-climate-risk-intelligence/
+
 │
+
 ├── backend/
+
 │   ├── api/
+
 │   ├── services/
+
 │   ├── preprocessing/
 │   ├── ml/
 │   ├── utils/

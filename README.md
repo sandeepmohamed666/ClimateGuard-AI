@@ -18,7 +18,9 @@ Build predictive ML models for risk assessment
 Detect anomalies in climate patterns
 Provide interpretable AI-based insights
 Support climate-related decision making
+
 🧱 Project Structure
+
 ai-climate-risk-intelligence/
 │
 ├── backend/
